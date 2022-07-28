@@ -5,5 +5,5 @@ build:
 
 docker-release:
 	git_hash=$(git rev-parse --short "$GITHUB_SHA")
-	docker build -t tuzhigen/golang-test:$git_hash .
-	docker push tuzhigen/golang-test:$git_hash
+	docker build -t tuzhigen/devops:$git_hash .
+	docker push tuzhigen/devops:$git_hash
