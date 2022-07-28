@@ -1,5 +1,5 @@
 FROM alpine:3.9
 WORKDIR /go/bin
-COPY main /go/bin
+COPY release/test-server /go/bin
 EXPOSE 9001
-ENTRYPOINT ["./main"]
+ENTRYPOINT ["./test-server"]

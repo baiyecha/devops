@@ -27,4 +27,4 @@ jobs:
           password: ${{ secrets.DOCKER_PW }}
 
       - name: Docker-image
-        run: make docker-build
+        run: make docker-release
