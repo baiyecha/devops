@@ -18,7 +18,7 @@ type User struct {
 func main() {
 	http.HandleFunc("/PostUser", PostUserHandler)
 	http.HandleFunc("/GetUser", GetUserHandler)
-	http.ListenAndServe("localhost:9001", nil)
+	http.ListenAndServe(":9001", nil)
 }
 
 func PostUserHandler(w http.ResponseWriter, r *http.Request) {
