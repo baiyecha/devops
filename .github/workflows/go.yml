@@ -31,3 +31,14 @@ jobs:
           git_hash=$(git rev-parse --short "$GITHUB_SHA")
           docker build -t tuzhigen/devops:$git_hash .
           docker push tuzhigen/devops:$git_hash
+
+      - name: Update-helm
+        run: |
+          mkdir temp
+          cd temp
+          git clone https://baiyecha:${ACCESS_TOKEN}@github.com/baiyecha/devops-helm.git
+          git_hash=$(git rev-parse --short "$GITHUB_SHA")
+          sed -i "s/tag: \".*\"/tag: \"$git_hash\"/g" ./values.yaml
+          git add .
+          git commit -m 'release: update image tag'
+          git push origin master
