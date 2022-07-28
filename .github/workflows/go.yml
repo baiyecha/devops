@@ -39,9 +39,9 @@ jobs:
           git clone https://baiyecha:${ACCESS_TOKEN}@github.com/baiyecha/devops-helm.git
           git_hash=$(git rev-parse --short "$GITHUB_SHA")
           cd devops-helm
-          ls
           sed -i "s/tag: \".*\"/tag: \"$git_hash\"/g" ./values.yaml
-          cat ./values.yaml
+          git config --global user.email "zhaoxiaolin326@gmaiol.com"
+          git config --global user.name "tuzhigen"
           git add .
           git commit -m 'release: update image tag'
           git push origin master
