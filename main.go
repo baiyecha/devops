@@ -44,7 +44,7 @@ func GetUserHandler(w http.ResponseWriter, r *http.Request) {
 			fmt.Println(r.Form["name"])
 		}
 		var user User
-		user.Name = "ljt"
+		user.Name = "tzg"
 		user.Age = 32
 		user.CreatedTime = time.Now()
 		user.IsDeleted = true
